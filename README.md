@@ -2,7 +2,15 @@
 
 ## Getting started
 
-`$ npm install react-native-screenshot-detector --save`
+Install
+
+`$ yarn add react-native-screenshot-detector`
+
+React Native < 0.60.0
+
+`pod install` inside of the ios sub folder
+
+React Native >= 0.60.0
 
 ### Mostly automatic installation
 
@@ -36,8 +44,22 @@
 
 ## Usage
 ```javascript
-import RnScreenShot from 'react-native-screenshot-detector';
+import { DisableScreenShot, EnableScreenShot } from 'react-native-rn-screen-shot'
 
-// TODO: What to do with the module?
-RnScreenShot;
-```
+
+componentDidMount(){
+	...
+	DisableScreenShot(this.callBack);
+}
+
+componentWillUnmount(){
+	...
+	EnableScreenShot()
+}
+
+callBack=()=>{
+Alert.alert("Warning","It isn't safe to take a screenshot")
+}
+
+For ios, we can not disable screenshot, so we just detect action screenshot.
+For android, any action screenshot or recording screen will be return black screen. 
