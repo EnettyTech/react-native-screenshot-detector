@@ -6,11 +6,11 @@ Install
 
 `$ yarn add react-native-screenshot-detector`
 
-React Native < 0.60.0
+React Native >= 0.60.0
 
 `pod install` inside of the ios sub folder
 
-React Native >= 0.60.0
+React Native < 0.60.0
 
 ### Mostly automatic installation
 
