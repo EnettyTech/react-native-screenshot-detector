@@ -1,20 +1,38 @@
-# react-native-screenshot-detector
+# rn-screenshot-detector
 
 ## Getting started
 
 Install
 
-`$ yarn add react-native-screenshot-detector`
+`$ yarn add rn-screenshot-detector`
 
 React Native >= 0.60.0
 
 `pod install` inside of the ios sub folder
 
+#### IOS
+Edit file `AppDelegate.m`
+```objectivec
+#import <RNScreenshotDetector/RNScreenshotDetector.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  // ... setup code
+
+  // Somewhere React Native will have placed something like
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL...]
+
+  // Somewhere below this you can setup the screenshot detector to listen for events
+  RNScreenshotDetector* screenshotDetector = [[RNScreenshotDetector alloc] init];
+  [screenshotDetector setupAndListen:rootView.bridge];
+}
+```
+
 React Native < 0.60.0
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-screenshot-detector`
+`$ react-native link rn-screenshot-detector`
 
 ### Manual installation
 
@@ -44,7 +62,7 @@ React Native < 0.60.0
 
 ## Usage
 ```javascript
-import { DisableScreenShot, EnableScreenShot } from 'react-native-rn-screen-shot'
+import { DisableScreenShot, EnableScreenShot } from 'rn-screenshot-detector'
 
 
 componentDidMount(){
@@ -60,6 +78,6 @@ componentWillUnmount(){
 callBack=()=>{
 Alert.alert("Warning","It isn't safe to take a screenshot")
 }
-
+```
 For ios, we can not disable screenshot, so we just detect action screenshot.
 For android, any action screenshot or recording screen will be return black screen. 

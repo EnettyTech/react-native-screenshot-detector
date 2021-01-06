@@ -1,7 +1,7 @@
 {
-  "name": "react-native-screenshot-detector",
-  "title": "React Native Rn Screen Shot",
-  "version": "1.0.0",
+  "name": "rn-screenshot-detector",
+  "title": "React Native Screen Shot Detect",
+  "version": "1.0.3",
   "description": "TODO",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-screenshot-detector.git",
-    "baseUrl": "https://github.com/github_account/react-native-screenshot-detector"
+    "url": "git+https://github.com/bachlongkocanh/react-native-screenshot-detector.git",
+    "baseUrl": "https://github.com/bachlongkocanh/react-native-screenshot-detector"
   },
   "keywords": [
     "react-native"
